@@ -10,6 +10,10 @@ describe('class Probe', () => {
       instance = new Probe();
     });
 
+    it('initial direction is rigth', () => {
+      expect(instance.direction).to.equal(Probe.RIGTH);
+    });
+
     it('initial position is (0, 0)', () => {
       expect(instance.x).to.equal(0);
       expect(instance.y).to.equal(0);
