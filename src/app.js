@@ -23,6 +23,13 @@ module.exports = () => {
     response.json(probeSerializer(probe));
   });
 
+  app.put('/initial/', (request, response) => {
+    probe.x = 0;
+    probe.y = 0;
+    response.status(204);
+    response.send('ok');
+  });
+
   app.get('/ping/', (request, response) => {
     response.send('OK');
   });

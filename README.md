@@ -30,6 +30,12 @@ $ curl -X PATCH http://localhost:3000/exec/ \
 {"x":2,"y":0,"direction":"D"}
 ```
 
+### [PUT] /initial/
+
+Move probe to position (0, 0).
+
+The response don't have content.
+
 ## Development
 
 ### Requirements
