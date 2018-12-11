@@ -94,6 +94,6 @@ Probe.TURN_LEFT = 'left';
 Probe.TURN_RIGHT = 'right';
 Probe.COMMAND_TURN_LEFT = 'GE';
 Probe.COMMAND_TURN_RIGHT = 'GD';
-Probe.COMMAND_MOVE = 'R';
+Probe.COMMAND_MOVE = 'M';
 
 exports.Probe = Probe;
