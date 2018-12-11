@@ -11,8 +11,8 @@ describe('class Probe', () => {
       instance = new Probe();
     });
 
-    it('initial direction is rigth', () => {
-      expect(instance.direction).to.equal(Probe.RIGTH);
+    it('initial direction is right', () => {
+      expect(instance.direction).to.equal(Probe.RIGHT);
     });
 
     it('initial position is (0, 0)', () => {
@@ -65,14 +65,14 @@ describe('class Probe', () => {
         });
       });
 
-      describe('command turn rigth', () => {
+      describe('command turn right', () => {
         let x;
         let y;
         let direction;
 
         beforeEach(() => {
           [x, y, direction] = instance.calculate(
-            Probe.COMMAND_TURN_RIGTH,
+            Probe.COMMAND_TURN_RIGHT,
             instance.x,
             instance.y,
             instance.direction,
@@ -154,6 +154,46 @@ describe('class Probe', () => {
         });
       });
     });
+
+    describe('exec()', () => {
+      describe('commands turn left, move, move, move, turn right, move and move', () => {
+        beforeEach(() => {
+          instance.exec([
+            Probe.COMMAND_TURN_LEFT,
+            Probe.COMMAND_MOVE,
+            Probe.COMMAND_MOVE,
+            Probe.COMMAND_MOVE,
+            Probe.COMMAND_TURN_RIGHT,
+            Probe.COMMAND_MOVE,
+            Probe.COMMAND_MOVE,
+          ]);
+        });
+
+        it('instance.x is 2', () => {
+          expect(instance.x).to.equal(2);
+        });
+
+        it('instance.y is 3', () => {
+          expect(instance.x).to.equal(2);
+        });
+      });
+
+      describe('commands turn right, move and move', () => {
+        let fn;
+
+        beforeEach(() => {
+          fn = () => instance.exec([
+            Probe.COMMAND_TURN_RIGHT,
+            Probe.COMMAND_MOVE,
+            Probe.COMMAND_MOVE,
+          ]);
+        });
+
+        it('throws LeftTheMatrix', () => {
+          expect(fn).throws(LeftTheMatrix);
+        });
+      });
+    });
   });
 
   describe('instance with matrix size 4x3', () => {
@@ -185,18 +225,18 @@ describe('class Probe', () => {
         });
       });
 
-      describe('turn rigth', () => {
+      describe('turn right', () => {
         it('returns up', () => {
-          expect(fn(Probe.TURN_RIGTH)).to.equal(Probe.UP);
+          expect(fn(Probe.TURN_RIGHT)).to.equal(Probe.UP);
         });
       });
     });
 
-    describe('direction is rigth', () => {
+    describe('direction is right', () => {
       let fn;
 
       beforeEach(() => {
-        fn = value => Probe.rotate(Probe.RIGTH, value);
+        fn = value => Probe.rotate(Probe.RIGHT, value);
       });
 
       describe('turn left', () => {
@@ -205,9 +245,9 @@ describe('class Probe', () => {
         });
       });
 
-      describe('turn rigth', () => {
+      describe('turn right', () => {
         it('returns down', () => {
-          expect(fn(Probe.TURN_RIGTH)).to.equal(Probe.DOWN);
+          expect(fn(Probe.TURN_RIGHT)).to.equal(Probe.DOWN);
         });
       });
     });
@@ -225,9 +265,9 @@ describe('class Probe', () => {
         });
       });
 
-      describe('turn rigth', () => {
-        it('returns rigth', () => {
-          expect(fn(Probe.TURN_RIGTH)).to.equal(Probe.RIGTH);
+      describe('turn right', () => {
+        it('returns right', () => {
+          expect(fn(Probe.TURN_RIGHT)).to.equal(Probe.RIGHT);
         });
       });
     });
@@ -240,14 +280,14 @@ describe('class Probe', () => {
       });
 
       describe('turn left', () => {
-        it('returns rigth', () => {
-          expect(fn(Probe.TURN_LEFT)).to.equal(Probe.RIGTH);
+        it('returns right', () => {
+          expect(fn(Probe.TURN_LEFT)).to.equal(Probe.RIGHT);
         });
       });
 
-      describe('turn rigth', () => {
+      describe('turn right', () => {
         it('returns left', () => {
-          expect(fn(Probe.TURN_RIGTH)).to.equal(Probe.LEFT);
+          expect(fn(Probe.TURN_RIGHT)).to.equal(Probe.LEFT);
         });
       });
     });
@@ -267,9 +307,9 @@ describe('class Probe', () => {
         });
       });
 
-      describe('direction rigth', () => {
+      describe('direction right', () => {
         it('returns (2, 1)', () => {
-          expect(fn(Probe.RIGTH)).to.deep.equal([2, 1]);
+          expect(fn(Probe.RIGHT)).to.deep.equal([2, 1]);
         });
       });
 
