@@ -121,4 +121,38 @@ describe('class Probe', () => {
       });
     });
   });
+
+  describe('static move()', () => {
+    describe('x is 1 and y is 1', () => {
+      let fn;
+
+      beforeEach(() => {
+        fn = direction => Probe.move(1, 1, direction);
+      });
+
+      describe('direction left', () => {
+        it('returns (0, 1)', () => {
+          expect(fn(Probe.LEFT)).to.deep.equal([0, 1]);
+        });
+      });
+
+      describe('direction rigth', () => {
+        it('returns (2, 1)', () => {
+          expect(fn(Probe.RIGTH)).to.deep.equal([2, 1]);
+        });
+      });
+
+      describe('direction up', () => {
+        it('returns (1, 2)', () => {
+          expect(fn(Probe.UP)).to.deep.equal([1, 2]);
+        });
+      });
+
+      describe('direction down', () => {
+        it('returns (1, 0)', () => {
+          expect(fn(Probe.DOWN)).to.deep.equal([1, 0]);
+        });
+      });
+    });
+  });
 });

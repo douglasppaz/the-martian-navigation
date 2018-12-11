@@ -27,6 +27,19 @@ class Probe {
       },
     })[direction][value];
   }
+
+  static move(x, y, direction) {
+    const vector = ({
+      [Probe.LEFT]: [-1, 0],
+      [Probe.RIGTH]: [1, 0],
+      [Probe.UP]: [0, 1],
+      [Probe.DOWN]: [0, -1],
+    })[direction];
+    return [
+      (x + vector[0]),
+      (y + vector[1]),
+    ];
+  }
 }
 
 Probe.LEFT = 'E';
