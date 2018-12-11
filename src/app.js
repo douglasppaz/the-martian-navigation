@@ -31,7 +31,7 @@ module.exports = () => {
     probe.x = 0;
     probe.y = 0;
     response.status(204);
-    response.send('ok');
+    response.send();
   });
 
   app.get('/ping/', (request, response) => {
