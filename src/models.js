@@ -1,3 +1,6 @@
+const { InvalidCommand, LeftTheMatrix } = require('./errors');
+
+
 class Probe {
   constructor(config) {
     const { matrixSize } = config || {};
@@ -40,6 +43,29 @@ class Probe {
       (y + vector[1]),
     ];
   }
+
+  calculate(command, x, y, direction) {
+    switch (command) {
+      case Probe.COMMAND_TURN_LEFT:
+        return [x, y, Probe.rotate(direction, Probe.TURN_LEFT)];
+      case Probe.COMMAND_TURN_RIGTH:
+        return [x, y, Probe.rotate(direction, Probe.TURN_RIGTH)];
+      case Probe.COMMAND_MOVE: {
+        const [outX, outY] = Probe.move(x, y, direction);
+        if (
+          outX >= this.matrixSize[0]
+          || outX < 0
+          || outY >= this.matrixSize[1]
+          || outY < 0
+        ) {
+          throw new LeftTheMatrix();
+        }
+        return [outX, outY, direction];
+      }
+      default:
+        throw new InvalidCommand();
+    }
+  }
 }
 
 Probe.LEFT = 'E';
@@ -48,5 +74,8 @@ Probe.UP = 'C';
 Probe.DOWN = 'B';
 Probe.TURN_LEFT = 'left';
 Probe.TURN_RIGTH = 'rigth';
+Probe.COMMAND_TURN_LEFT = 'GE';
+Probe.COMMAND_TURN_RIGTH = 'GD';
+Probe.COMMAND_MOVE = 'R';
 
 exports.Probe = Probe;
