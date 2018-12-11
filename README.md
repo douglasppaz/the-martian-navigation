@@ -36,6 +36,12 @@ Move probe to position (0, 0).
 
 The response don't have content.
 
+e.g.:
+
+```
+$ curl -X PUT http://localhost:3000/initial/
+```
+
 ## Development
 
 ### Requirements
