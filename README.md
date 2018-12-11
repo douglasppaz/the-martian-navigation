@@ -14,7 +14,7 @@ e.g.:
 
 ```
 $ curl -X GET http://localhost:3000/current/
-{"x":0,"y":0}
+{"x":0,"y":0,"direction":"D"}
 ```
 
 ### [PATCH] /exec/
