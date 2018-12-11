@@ -4,10 +4,14 @@ const { Probe } = require('./models');
 const { probeSerializer } = require('./utils');
 const { LeftTheMatrix, InvalidCommand } = require('./errors');
 
+const { MATRIX_SIZE } = process.env;
+
 
 module.exports = () => {
   const app = express();
-  const probe = new Probe();
+  const probe = new Probe({
+    matrixSize: MATRIX_SIZE && MATRIX_SIZE.split('x'),
+  });
 
   app.use(morgan('tiny'));
   app.use(express.json());

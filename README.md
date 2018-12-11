@@ -69,3 +69,4 @@ Run the commands in terminal following this pattern: `npm run [command]` or `yar
 | Name | Default | Description |
 |---|---|---|
 | PORT | 3000 | HTTP server port |
+| MATRIX_SIZE | 5x5 | Matrix size separate per `x` |
