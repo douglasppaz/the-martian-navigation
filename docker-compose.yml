@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  the-martian-navigation:
+    image: douglasppaz/the-martian-navigation
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    environment:
+      MATRIX_SIZE: ${MATRIX_SIZE:-5x5}
