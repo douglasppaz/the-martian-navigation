@@ -1,6 +1,6 @@
 # The Martian Navigation
 
-[![node v8.12.0](https://img.shields.io/badge/node-v8.12.0-red.svg)](https://nodejs.org/en/blog/release/v8.12.0/) [![license MIT](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/douglasppaz/the-martian-navigation/blob/master/LICENSE) [![Build Status](https://travis-ci.org/douglasppaz/the-martian-navigation.svg?branch=master)](https://travis-ci.org/douglasppaz/the-martian-navigation)
+[![node v8.12.0](https://img.shields.io/badge/node-v8.12.0-red.svg)](https://nodejs.org/en/blog/release/v8.12.0/) [![license MIT](https://img.shields.io/apm/l/vim-mode.svg)](https://github.com/douglasppaz/the-martian-navigation/blob/master/LICENSE) [![Build Status](https://travis-ci.org/douglasppaz/the-martian-navigation.svg?branch=master)](https://travis-ci.org/douglasppaz/the-martian-navigation) [![Coverage Status](https://coveralls.io/repos/github/douglasppaz/the-martian-navigation/badge.svg?branch=master)](https://coveralls.io/github/douglasppaz/the-martian-navigation?branch=master)
 
 The Martian Navigation is a simple app made with Node.js to control probes in mars.
 
