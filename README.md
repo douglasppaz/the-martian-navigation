@@ -1,5 +1,18 @@
 # The Martian Navigation
 
+## Endpoints
+
+### /current/
+
+The response is a JSON content with probe position:
+
+e.g.:
+
+```
+$ curl -X GET http://localhost:3000/current/
+{"x":0,"y":0}
+```
+
 ## Development
 
 ### Requirements
