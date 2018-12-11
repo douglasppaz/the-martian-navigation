@@ -20,6 +20,7 @@ Run the commands in terminal following this pattern: `npm run [command]` or `yar
 | start | Start HTTP server. |
 | dev | Start HTTP server with nodemon auto reload. |
 | lint | Lint code with eslint following Airbnb Style Guide. |
+| test | Run all unit tests with mocha |
 
 ## Environment Variables
 
