@@ -70,3 +70,13 @@ Run the commands in terminal following this pattern: `npm run [command]` or `yar
 |---|---|---|
 | PORT | 3000 | HTTP server port |
 | MATRIX_SIZE | 5x5 | Matrix size separate per `x` |
+
+## Deploy
+
+You can found Docker images in [Docker Cloud repository](https://cloud.docker.com/repository/docker/douglasppaz/the-martian-navigation) to deploy The Martian Navigation in your prefer cloud platform.
+
+### Play With Docker
+
+To tests you can try use Play With Docker, deploy the stack in just one click:
+
+[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/douglasppaz/the-martian-navigation/master/docker-compose.yml)
